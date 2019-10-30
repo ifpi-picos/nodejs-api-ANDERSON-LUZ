@@ -1,6 +1,5 @@
 const express = require('express');
 const postagensController = require('../controllers/postagens')
-const Postagem = require('../models/postagem');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -29,8 +28,8 @@ router.delete('/:id', async (req,res) => {
 
 router.get('/:id', async (req,res) => {
   const id = req.params.id;
-  await postagensController.getId(id);
-  res.send(Postagem);
+  const postagem = await postagensController.getId(id);
+  res.send(postagem);
 });
 
 module.exports = router;

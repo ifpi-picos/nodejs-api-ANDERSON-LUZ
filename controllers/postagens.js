@@ -19,9 +19,9 @@ class Postagens {
     await PostagemModel.deleteOne({_id: id});
   }
 
-  async getId (id) { 
-    const Postagem = await PostagemModel.find({_id: id});
-    return Postagem;
+  async getId (id) {
+    const postagem = await PostagemModel.find({_id: id});
+    return postagem;
   }
 
 }
